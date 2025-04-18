@@ -1,0 +1,30 @@
+:root {
+  --primary-bg: #040f21;
+  --primary-accent: #0af;
+  --secondary-accent: #06c;
+  --text-primary: #fff;
+  --text-secondary: #ccc;
+  --box-shadow: 0 4px 30px rgba(0, 170, 255, 0.15);
+  --glow: 0 0 10px rgba(0, 170, 255, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
