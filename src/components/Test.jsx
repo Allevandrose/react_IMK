@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import logo from '../assets/images/logo.png';
 import '../assets/css/Nav.css'; // Optional: If you have your styles there
+import '../assets/css/General.css';
+
 
 const Test = () => {
   const [scrolled, setScrolled] = useState(false);
