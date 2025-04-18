@@ -3,6 +3,8 @@ import logo from '../assets/images/logo.png';
 import '../assets/css/Nav.css'; // Optional: If you have your styles there
 import '../assets/css/General.css';
 
+// You can import the Font Awesome library in the main entry file if not done already
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Test = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,6 +20,15 @@ const Test = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Manage body overflow when menu is open/closed
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [isOpen]);
+
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="container">
@@ -26,6 +37,7 @@ const Test = () => {
             <img src={logo} alt="IMK Technologies Logo" />
           </div>
           <div className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
+            {/* Font Awesome icons for the hamburger menu and close icon */}
             <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </div>
           <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
