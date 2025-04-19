@@ -1,6 +1,6 @@
 import React from "react";
-import '../assets/css/About.css'; // Import the CSS file for styling
 import '../assets/css/General.css';
+import '../assets/css/About.css'; // Import the CSS file for styling
 import team from '../assets/images/team.png';
 
 const About = () => {

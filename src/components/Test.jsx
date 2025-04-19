@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
-import logo from '../assets/images/logo.png';
-import '../assets/css/Nav.css'; // Optional: If you have your styles there
-import '../assets/css/General.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
-// You can import the Font Awesome library in the main entry file if not done already
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import logo from '../assets/images/logo.png';
+import '../assets/css/Nav.css';
+import '../assets/css/General.css';
 
 const Test = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Handle scroll detection
+  // Detect scroll to add 'scrolled' class
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.pageYOffset > 50);
@@ -20,7 +20,7 @@ const Test = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Manage body overflow when menu is open/closed
+  // Disable body scroll when nav is open
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('menu-open');
@@ -36,10 +36,14 @@ const Test = () => {
           <div className="logo">
             <img src={logo} alt="IMK Technologies Logo" />
           </div>
+
           <div className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
-            {/* Font Awesome icons for the hamburger menu and close icon */}
-            <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'}`}></i>
+            <FontAwesomeIcon 
+              icon={isOpen ? faXmark : faBars} 
+              className="nav-icon"
+            />
           </div>
+
           <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
             <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
             <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>

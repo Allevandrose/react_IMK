@@ -24,7 +24,7 @@ body {
 
 /* Prevent scrolling when menu is open */
 .menu-open {
-overflow: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -34,63 +34,50 @@ overflow: hidden;
   padding: 0 20px;
 }
 
-/* Update .nav-toggle with padding */
-.nav-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-primary);
-  padding: 10px; /* Increases clickable area */
-}
-
 /* Responsive Design */
 @media (max-width: 992px) {
-.about-content {
-  flex-direction: column;
-}
+  .about-content {
+    flex-direction: column;
+  }
 
-.hero h1 {
-  font-size: 3rem;
-}
+  .hero h1 {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
-.nav-toggle {
-  display: block;
-}
+  .nav-menu {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(4, 15, 33, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all 0.4s ease-out;
+    backdrop-filter: blur(10px);
+  }
 
-.nav-menu {
-  position: fixed;
-  top: 90px;
-  left: 0;
-  width: 100%;
-  background-color: rgba(4, 15, 33, 0.95);
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  transition: all 0.4s ease-out;
-  backdrop-filter: blur(10px);
-}
+  .nav-menu.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    box-shadow: var(--box-shadow);
+  }
 
-.nav-menu.active {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  box-shadow: var(--box-shadow);
-}
+  .nav-menu li {
+    margin: 15px 0;
+  }
 
-.nav-menu li {
-  margin: 15px 0;
-}
+  .stats {
+    grid-template-columns: 1fr;
+  }
 
-.stats {
-  grid-template-columns: 1fr;
-}
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 
-.hero h1 {
-  font-size: 2.5rem;
-}
-
-.section {
-  padding: 70px 0;
-}
+  .section {
+    padding: 70px 0;
+  }
 }
