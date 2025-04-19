@@ -1,7 +1,7 @@
 import React from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css' // Default Splide styles
-import '../assets/css/testimonials.css' // Your external CSS file
+import '../assets/css/Testimonials.css' // Your external CSS file
 
 const testimonials = [
   {
