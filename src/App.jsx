@@ -5,7 +5,7 @@ import "./App.css";
 import "./assets/css/General.css";
 
 // Components
-import Test from "./components/test";
+import Test from "./components/Test";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
